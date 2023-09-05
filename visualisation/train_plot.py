@@ -24,12 +24,12 @@ for filename in os.listdir('../training'):
         if params[4] == 'default' and params[0].endswith('False') and params[1] == 'FP' and params[3] == '8f':
             print(filename)
             temp = pd.read_csv('../training/' + filename)
-            social_surplus[params[2]] = list(temp['social_surplus'])
-            auction_revenue[params[2]] = list(temp['auction_revenue'])
-            social_welfare[params[2]] = list(temp['social_welfare'])
+            # social_surplus[params[2]] = list(temp['social_surplus'])
+            # auction_revenue[params[2]] = list(temp['auction_revenue'])
+            # social_welfare[params[2]] = list(temp['social_welfare'])
             bidder_surplus[params[2]] = list(temp['my_surplus'])
-            bidder_overbid_regret[params[2]] = list(temp['my_overbid_regret'])
-            bidder_underbid_regret[params[2]] = list(temp['my_underbid_regret'])
+            # bidder_overbid_regret[params[2]] = list(temp['my_overbid_regret'])
+            # bidder_underbid_regret[params[2]] = list(temp['my_underbid_regret'])
 
         # # comparing FP, SP
         # if params[4] == 'default' and params[0].endswith('False') and params[2] == 'DR' and params[3] == '8f':
