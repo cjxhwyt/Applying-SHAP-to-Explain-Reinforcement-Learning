@@ -25,12 +25,9 @@ class Auction:
 
         self.num_participants_per_round = num_participants_per_round
 
-    def simulate_opportunity(self):
+    def simulate_opportunity(self, true_context):
         # Sample the number of slots uniformly between [1, max_slots]
         num_slots = self.rng.integers(1, self.max_slots + 1)
-
-        # Sample a true context vector
-        true_context = np.concatenate((self.rng.normal(0, self.embedding_var, size=self.embedding_size), [1.0]))
 
         # Mask true context into observable context
         obs_context = np.concatenate((true_context[:self.obs_embedding_size], [1.0]))
