@@ -54,16 +54,20 @@ To replicate the examples presented above, please follow these commands after co
 `cd pipeline`
 
 Train a bidder model with 40 context features that follow a specific data distribution, and save training information to [training](https://github.com/cjxhwyt/Applying-SHAP-to-Explain-Reinforcement-Learning/tree/main/training) and the final model to [model](https://github.com/cjxhwyt/Applying-SHAP-to-Explain-Reinforcement-Learning/tree/main/model):
+
 `python train_bidder.py FP_DR_40f.json specific True False`
 
 Sample 1000 data instances from the same specific distribution and save them to [data](https://github.com/cjxhwyt/Applying-SHAP-to-Explain-Reinforcement-Learning/tree/main/data):
+
 `python data_generation.py FP_DR_40f.json specific True 1000`
 
 Estimate SHAP values for the explanation dataset using Permutation estimator given the bidder model, and save the value information to [shap](https://github.com/cjxhwyt/Applying-SHAP-to-Explain-Reinforcement-Learning/tree/main/shap):
+
 `python permutationSHAP.py FP_DR_40f.json specific True 1000`  
 
 ### Dashboard
 `cd visualisation`
 
 Display the dashboard saved in [dashboard](https://github.com/cjxhwyt/Applying-SHAP-to-Explain-Reinforcement-Learning/tree/main/dashboard) on a browser (can also re-create one by commenting and uncommenting codes in [dashboard_SHAP.py](https://github.com/cjxhwyt/Applying-SHAP-to-Explain-Reinforcement-Learning/blob/main/visualisation/dashboard_SHAP.py)):
+
 `python dashboard_SHAP.py FP_DR_40f.json specific True 1000`
